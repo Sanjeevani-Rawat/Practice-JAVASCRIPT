@@ -91,4 +91,90 @@ console.log(Object.keys(citiesPopulations))
 console.log(Object.values(citiesPopulations))
 
 // 6. use a for in loop to loop through an object containing city populations . skip any city with a population below 3 million and store the rest in a new object named largeCities. 
+/* 
+    let worldCities = {
+    "Sydney": 5000000,
+    "Tokyo": 9000000, 
+    "Berlin": 3500000,
+    "Paris": 2200000
+    };
+*/
 console.log("Challenge 6.");
+let worldCities = {
+    "Sydney": 5000000,
+    "Tokyo": 9000000, 
+    "Berlin": 3500000,
+    "Paris": 2200000
+};
+let largeCities={}
+for(let city in worldCities){
+    if(worldCities[city]<3000000){
+        continue;
+    }
+    largeCities[city]=worldCities[city];
+}
+console.log(largeCities);
+
+// 7. Write a forEach loop that iterates through the array ["earl grey", "green tea", "chaii", "oolang tea"]. stop the loop when "chaii" is found, and store all prev tea types in an array named 'availableTeas'
+console.log("Challenge 7.");
+let array = ["earl grey", "green tea", "chaii", "oolang tea"];
+let availableTeas = [];
+// here we dont have to define the name of the func as we need this func inside the loop only 
+array.forEach(function(tea){
+    if(tea=="chaii"){
+        //break; // u cant directly used break or continue inside a func
+        return;
+    }
+    console.log(tea);
+
+    availableTeas.push(tea);
+});
+console.log(availableTeas)
+
+// lambda expression 
+// array.forEach((tea)=>{
+//     console.group(tea);
+// })
+
+// we could write func like this as well 
+// () => {
+    
+//}
+
+// write a foreach loop that iterates through the array ["London", "New York", "Paris", "Berlin"] and skips "Paris". Store all cities in a new array named 'traveledPlaces' 
+console.log("Challenge 8.");
+let places = ["London", "New York", "Paris", "Berlin"];
+let traveledPlaces = [];
+places.forEach(function (place){
+    if(place == "Paris"){
+        return;
+    }
+    traveledPlaces.push(place);
+});
+console.log(traveledPlaces);
+
+// 9. write a for loop that iterates through the array [2, 5, 7, 9]. skip the value 7 and multiply the rest by 2. store the res in new array named doubledNum.
+console.log("Challenge 9.");
+let numb = [2, 5, 7, 9];
+let dbnum=[];
+for(let n = 0; n<numb.length; n++){
+    if(numb[n]==7){
+        continue;
+    }
+    dbnum.push(numb[n]*2);
+}
+console.log(dbnum)
+
+
+
+// 10. use a for of loop to iterate through the array ["chai", "green tea", "black tea", "jasmine tea", "herbal tea"] and stop when the len of the current tea name is grtr than 10. store the teas iterated over in an array named shortteas.
+console.log("Challenge 10.");
+let myteas = ["chai", "green tea", "black tea", "jasmine tea", "herbal tea"]
+let shortteas = []
+for(let mytea of myteas){
+    if (mytea.length>10){
+        break
+    }
+    shortteas.push(mytea);
+}
+console.log(shortteas)

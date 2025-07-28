@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Positioning Demo</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .box {
+            padding: 15px 20px;
+            margin: 20px 0;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .static-box {
+            background: #6c757d;
+            position: static;
+        }
+
+        .relative-box {
+            background: #007bff;
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+
+        .outer-box {
+            position: relative;
+            height: 150px;
+            background: #f8f9fa;
+            border: 2px dashed #999;
+            margin: 40px 0;
+        }
+
+        .absolute-box {
+            background: #28a745;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .fixed-box {
+            background: #dc3545;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+
+        .sticky-box {
+            background: #ffc107;
+            position: sticky;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Positioning Types</h1>
+
+    <!-- Static -->
+    <div class="box static-box">Static (default)</div>
+
+    <!-- Relative -->
+    <div class="box relative-box">Relative (top: 20px, left: 20px)</div>
+
+    <!-- Absolute -->
+    <div class="outer-box">
+        <div class="box absolute-box">Absolute (top: 10px, right: 10px)</div>
+    </div>
+
+    <!-- Fixed -->
+    <div class="box fixed-box">Fixed (top-right corner)</div>
+
+    <!-- Sticky -->
+    <div class="box sticky-box">Sticky (sticks to top)</div>
+
+    <!-- Just to create scroll -->
+    <div style="height: 1500px;"></div>
+
+</body>
+
+</html>

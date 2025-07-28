@@ -1,0 +1,204 @@
+<!-- lec 21 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAV</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0px;
+            padding: 20px;
+            /* border: dashed; */
+            background-color: #080439;
+            color: #224b31;
+        }
+
+        .nav {
+            margin: 10px;
+            padding: 2px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .nav1 {
+            background-color: #f5f5f5;
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .nav1 a {
+            text-decoration: none;
+            position: relative;
+        }
+
+        .nav1 a::after {
+            content: "";
+            position: absolute;
+            height: 4px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            background-color: #e7360e;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .nav1 a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .nav2 ul {
+            list-style- type: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .nav2 li {
+            display: inline;
+            background-color: #b33939;
+            text-decoration: none;
+            padding: 10px;
+            position: relative;
+        }
+
+        .log {
+            background-color: chartreuse;
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+            /* cursor: pointer; */
+            cursor: crosshair;
+            width: 100px;
+        }
+
+
+        .nav3 {
+            background-color: #175d2a;
+            width: 150px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav3 ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav3 li {
+            margin: 12px;
+        }
+
+        .nav3 a {
+            text-decoration: none;
+            color: #f5f5f5;
+            display: block;
+            padding: 5px;
+            width: 100%;
+        }
+
+        .nav3 a:hover {
+            background-color: #2c3e50;
+        }
+
+        .nav3 .log:hover {
+            background-color: rgb(42, 66, 155);
+            border: 1px solid white;
+        }
+
+
+        .nav4 {
+            background-color: #50d5ed;
+            padding: 10px;
+        }
+
+        .nav4 ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nav4 a{
+            text-decoration: none;
+            color: #f5f5f5;
+            padding: 10px;
+            display: block;
+        }
+
+        .nav4 .dropdown-content{
+            display: none;
+        }
+        .nav4 .dropdown:hover .dropdown-content{
+           display: block;
+           position: absolute;
+           background-color: #723030;
+        } 
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <nav class="nav1">
+            <a href="#"> Home</a>
+            <a href="#"> About</a>
+            <a href="#"> Contact</a>
+            <p><button class="log">LOGIN</button></p>
+        </nav>
+    </div>
+
+    <div class="nav">
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <nav class="nav2">
+            <ul>
+                <li><a href="#"> Home</a></li>
+                <li><a href="#"> About</a></li>
+                <li><a href="#"> Contact</a></li>
+                <li><button class="log">LOGIN</button></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="nav">
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <nav class="nav3">
+            <ul>
+                <li><a href="#"> Home</a></li>
+                <li><a href="#"> About</a></li>
+                <li><a href="#"> Contact</a></li>
+                <li><button class="log">LOGIN</button></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <div class="nav">
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <nav class="nav4">
+            <ul>
+                <li><a href="#"> Home</a></li>
+                <li class="dropdown"><a href="#"> About</a>
+                    <div class="dropdown-content">
+                        <a href="#">Our story</a>
+                        <a href="#">Team</a>
+                        <a href="#">Requirements</a>
+                    </div>
+                </li>
+                <li><a href="#"> Contact</a></li>
+                <li><button class="log">LOGIN</button></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>

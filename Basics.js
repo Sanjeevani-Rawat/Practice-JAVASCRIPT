@@ -123,3 +123,29 @@ console.log(c/d) // here it will throw error because you can't divide string by 
 
 
 console.log("***** TYPE CONVERSION *****");
+const m = "3"
+const n = "6"
+console.log(typeof m);
+
+
+console.log(Number(m) + Number(n));
+
+const o = Number(m)
+console.log(typeof o);
+
+console.log(Boolean(m));
+console.log(Boolean(0));
+
+
+console.log("***** READLINE-SYNC *****");
+
+const readlineSync = require('readline-sync');
+
+let name = readlineSync.question('What is your name? ');
+console.log(`Hello, ${name}!`);
+
+let age3 = readlineSync.question("And your age? ");
+console.log(`You are ${age3} years old.`)
+
+const yrBirth = 2025 - age3;
+console.log(`You born in ${yrBirth} year`);

@@ -1,76 +1,19 @@
-<!-- async -->
-<!-- defer -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <title>HTML by JS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="main-heading">
-            <h1 class="title">DEMO</h1>
+    <div id="parent-container">
+        <div class="card-container d-flex gap-sm">
+            <img src="longRoad.jpg" alt="journey" class="image">
+            <span>The journey of a thousand miles begins with a single step.</span>
         </div>
     </div>
-    <div class="btn">
-        <button id="btn-start" class="button start">Start</button>
-        <button id="btn-stop" class="button stop">Stop</button>
-        <button id="btn-reset" class="button reset">Reset</button>
-        <button id="btn-count" class="button count">Count</button>
-    </div>
 
-    <div class="in-put">
-        <input type="text" class="input" id="input1">  
-    </div>
-    <div class="in-put">
-        <input type="text" class="input" id="input2">      
-    </div>
-    <div class="in-put">
-        <input type="text" class="input" id="input3">      
-    </div>
-
-    <hr>
-
-    <div class="in-put">
-        <input type="text" class="input" id="mouseDown">      
-    </div>
-    <div class="in-put">
-        <input type="text" class="input" id="mouseCor">  
-    </div>
-
-    <hr>
-
-    <!-- Bubbling and Capturing -->
-    <div class="main-heading">
-        <h1 class="title">Bubbling and Capturing</h1>
-    </div>
-    <form action="" id="form">
-        Form
-            <div id="div">
-            Div (Bubbling)
-            <p id="para">Para (Capturing)</p>
-        </div>
-    </form>
-
-    <hr>
-
-    <!-- Elegation -->
-    <div class="main-heading">
-        <h1 class="title">Event Elegation</h1>
-    </div>
-    <div id="btn-container">
-        <button class="button red">RED</button>
-        <button class="button green">GREEN</button>
-        <button class="button blue">BLUE</button>
-        <button class="button yellow">YELLOW</button>
-        <button class="button magenta">MAGENTA</button>
-    </div>
-
-
-    <script src="./index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

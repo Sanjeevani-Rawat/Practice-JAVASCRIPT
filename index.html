@@ -3,53 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Asynchronous</title>
+
+    <style>
+        body{
+            background-color: #000;
+        }
+    </style>
 </head>
 <body>
-    <script>
-        //  1. write a while loop that calculates the sum of all numbers from 1 to 5 and store the result in a variable called sum.
-
-console.log("Ques 1.");
-let sum = 0;
-let i = 1; 
-while(i<=5){
-    sum += i;   // sum = sum + i;
-    i++;
-}
-console.log(sum);
-
-// 2. write a while loop that counts down from 5 to 1 and stores no. in an array named countdown
-console.log("Ques 2.");
-let countdown = [];
-let j = 5; 
-while(j>=1){
-    countdown.push(j);
-    j--;
-}
-console.log(countdown);
-
-// 3. write a do while loop that prompts a user to enter their fav tea type until they enter stop. Store the tea type in an array named teaCollection
-console.log("Ques 3.");
-let teaCollection = [];
-let tea;
-do{
-    tea = prompt(`Enter ur fav tea (type stop to stop)`);
-    if(tea != stop)
-        teaCollection.push(tea);
-    // else
-} while(tea == "stop");
-console.log(teaCollection)
-
-// 4. write do while loop that adds no. from 1 to 3 and store the res in a variable named total
-console.log("Ques 4.");
-let total = 0;
-let l = 1;
-do{
-    total += l;
-    l++;
-} while(l<=3);
-console.log(total)
-    </script>
-    
+    <button id="btn">Click Me</button>
 </body>
+
+<script>
+    function a(callback){
+    console.log("Hello")
+    callback();
+}
+
+function b(){
+    console.log("Bye")
+}
+
+a(b)
+// b is a callback function for function a 
+
+setTimeout(function callback(){
+    console.log("Executed after a delay [Inside setTimeout]")
+}, 2000)
+console.log("Wait for the setTimeout to be execute...")
+
+/*
+fetch("http://....")
+    .then(function(){
+        // response logic
+    })
+       
+*/
+
+const btn = document.getElementById('btn')
+btn.addEventListener("click", function (){
+    console.log("clicked")
+})
+
+
+
+
+const URL = "https://jsonplaceholder.typicode.com/todos/1"
+
+let promise = fetch(URL);
+console.log(promise)
+
+promise
+.then(function(response){    // to handle when the problem is resolved or fulfilled
+    // console.log(response)
+    return response.json()
+})
+.then(function(data){
+    console.log(data)
+})
+.catch(function(error){   // this is the catch method to handle the error we did chaning
+    console.log("Error Occured", error) 
+})  
+
+
+
+// CREATING YOUR OWN PROMISE 
+
+const isRequestSuccessful = true;
+
+const db = [
+    {id: 1, name:"Akhil"},
+    {id: 2, name:"Divya"}
+]
+
+let promise2 = new Promise((resolve, reject) => {
+    if(isRequestSuccessful){
+        // resolve("promise resolved")
+        // setTimeout(() => resolve("promise resolved"), 3000)
+        setTimeout(() => resolve(db), 3000)
+    }
+    else{
+        const error = new Error("Something went wrong")
+        reject(error.message)
+
+    }   
+})
+
+promise2
+.then((response) => console.log(response))
+.catch(function(err){
+    console.log(err)
+})
+
+console.log(promise2)
+
+
+
+let promise1 = new Promise(resolve => setTimeout(()=> resolve("Promise 1 resolved"), 1000))
+let promise22 = new Promise(resolve => setTimeout(()=> resolve("Promise 22 resolved"), 2000))
+let promise3 = new Promise(resolve => setTimeout(()=> resolve("Promise 3 resolved"), 3000))
+
+// promise1.then((res) => console.log(res))
+// promise2.then((res) => console.log(res))
+// promise3.then((res) => console.log(res))
+
+let arrOfPromises = [promise1, promise22, promise3]
+
+let promise222 = Promise.all(arrOfPromises)
+// console.log(promise222)
+promise222.then((res) => console.log(res)).catch((err) => console.log(err))
+
+
+let promise10 = new Promise(resolve => setTimeout(()=> resolve("Promise 1 resolved"), 1000))
+let promise20 = new Promise((resolve, reject) => setTimeout(()=> reject("Promise 2 rejected"), 2000))
+let promise30 = new Promise(resolve => setTimeout(()=> resolve("Promise 3 resolved"), 3000))
+
+let arrOfPromisesss = [promise10, promise20, promise30]
+
+let pr = Promise.allSettled(arrOfPromisesss)
+console.log(pr)
+
+
+
+
+
+
+</script>
 </html>

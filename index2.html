@@ -1,0 +1,87 @@
+<!-- BOM -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+    <style>
+        body{
+            background-color: rgb(54, 48, 53);
+        }
+    
+        h1{
+            text-align: center;
+        }
+        .container button{
+            display: block;
+            justify-content: center;
+            align-items: center;
+            width: 25%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        button:hover{
+            background-color: rgb(94, 44, 94);
+            color: aliceblue;
+        }
+    </style>
+    <link rel="stylesheet" href="index2.js">
+</head>
+<body>
+    <h1>Window Object</h1>
+    <div class="container">
+
+        <button id="showUrl">Show current URL</button>
+        <button id="redirect">Redirect to google</button>
+        <button id="screenInfo">Show screen information</button>
+        <button id="showAlert" onclick="showAlert()">Alert Box</button>
+        <button id="showConfirm" onclick="showConfirm()">Confirm Box</button>
+        <button id="showConfirmYT" onclick="showConfirmYoutube()">Confirm to YT</button>
+        <button id="showPrompt" onclick="showPrompt()">Prompt Box</button>
+    </div>
+</body>
+<script>
+    var yourName = "something" // this var has a global scope
+    // function any(){
+    //     console.log(yourName)
+    // }
+        // window object 
+
+    window.console.log(window.yourName) // this can be accessed using yourName only
+    window.console.log(yourName)
+    console.log(yourName)
+
+    function showAlert(){
+        window.alert('  This is how an ALERT shows !!!')
+    }
+
+    function showConfirm(){
+        const result = confirm('You are working on Java, Js and Python.')
+        console.log(result)
+    }
+
+    console.log(window.location)
+    console.log(window.location.href)
+
+    function showConfirmYoutube(){
+    const res = confirm('Do you want to go to YouTube???')
+        if(res){
+        window.location.href = 'https://www.youtube.com/'
+        }
+    }
+
+    function showPrompt(){
+        const res = prompt('What is your name?')
+        console.log({res})
+        const age = prompt('What is your age?')
+        console.log({age})
+        if(Number(age)>= 18){
+            alert('Eligible')
+        } else{
+            alert('Not eligible')
+        }
+
+    }
+</script>
+</html>
